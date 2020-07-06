@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/favicon.png"/>
+    <title>Grancursos</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6">
+          <a href="#" id='logo'>
+            <img src="img/logo.png" alt="Grancursos">
+          </a>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <a href="#" id='logged-user' class="d-flex" style="text-decoration: none;">
+            Olá, Glauber Santos
+            <i class="fa fa-user-circle-o"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav id='main-menu' class="navbar navbar-expand-lg navbar-dark">
+      <span class="navbar-toggler" 
+        data-toggle="collapse" 
+        data-target="#conteudoNavbarSuportado" 
+        aria-controls="conteudoNavbarSuportado" 
+        aria-expanded="false" 
+        aria-label="Alterna navegação">
+        <i class="fa fa-bars"></i>
+      </span>
+      <div id='breadcrumb-menu'>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Questões</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Concursos Públicos</li>
+        </ol>
+        <div>
+          <h1>
+            Questões para Concursos
+          </h1>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Provas</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Questões para Concursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Questões para OAB</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Assuntos Frequêntes</a>
+          </li>
+        </ul>
+      </div>
+      <a href="#" id='search-bar' data-content="filtros-content" data-target="#filtros-container" >
+        <i class="fa fa-search"></i>
+      </a>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div id="filters" class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-light btn-block text-left" type="button" 
+                style="border: 1px solid #DDD"
+                data-target="#filtros-container" 
+                data-content="filtros-content">
+                <i class="fa fa-filter" style="color: #666"></i>&nbsp;
+                Filtros
+              </button>
+            </div>
+            <div>
+              <button class="btn btn-light btn-block text-left" type="button" 
+                style="border: 1px solid #DDD"
+                data-target="#filtros-container" 
+                data-content="outros-content">
+                <i class="fa fa-gear" style="color: #666"></i>&nbsp;
+                Opções
+              </button>
+            </div>
+          </div>
+          <div class="collapse" id="filtros-container">
+            <div class="card card-body">
+              <form id="filtros-content">
+
+                <div class="form-group">
+                  <input type="busca" class="form-control" 
+                    id="busca" 
+                    aria-describedby="busca" 
+                    placeholder="Digite para buscar disciplinas e assuntos">
+                </div>
+
+                <div class="row">
+                  <div class="col-4">
+                    <div class="form-group">
+                      <select class="form-control" id="banca">
+                        <option>Banca</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <select class="form-control" id="orgao">
+                        <option>Órgão</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <select class="form-control" id="ano">
+                        <option>Ano</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <div class="form-group">
+                      <select class="form-control" id="cargo">
+                        <option>Cargo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <select class="form-control" id="nivel">
+                        <option>Nível</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <select class="form-control" id="Tipo de Questão">
+                        <option>Tipo de Questão</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-sm" type="button">
+                  <i class="fa fa-check"></i>&nbsp;
+                  Salvar Filtro
+                </button>
+
+                <button class="btn btn-light btn-sm" type="reset" style="margin-left: 0.5em; border: 1px solid #DDD">
+                  Limpar
+                </button>
+                
+              </form>
+              <form id="outros-content">
+                
+                <b>Minhas Questões:</b><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Todas" id="todas" checked>
+                  <label class="form-check-label" for="todas">
+                    Todas
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Já resolvi" id="ja-resolvi">
+                  <label class="form-check-label" for="ja-resolvi">
+                    Já resolvi
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Acertei" id="acertei">
+                  <label class="form-check-label" for="acertei">
+                    Acertei
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Errei" id="errei">
+                  <label class="form-check-label" for="errei">
+                    Errei
+                  </label>
+                </div>
+                
+                <br><br><b>Excluir questões:</b><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Anuladas" id="anuladas" checked>
+                  <label class="form-check-label" for="anuladas">
+                    Anuladas
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Desatualizadas" id="desatualizadas" checked>
+                  <label class="form-check-label" for="desatualizadas">
+                    Desatualizadas
+                  </label>
+                </div>
+
+                <br><br><b>Ocultar Comentários:</b><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Comentários do professor" id="c-professor">
+                  <label class="form-check-label" for="c-professor">
+                    Comentários do professor
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Comentários dos alunos" id="c-alunos">
+                  <label class="form-check-label" for="c-alunos">
+                    Comentários dos alunos
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="Meus comentários" id="c-meus">
+                  <label class="form-check-label" for="c-meus">
+                    Meus comentários
+                  </label>
+                </div>
+
+                <br>
+                <br>
+                <button class="btn btn-primary btn-sm" type="button">
+                  <i class="fa fa-check"></i>&nbsp;
+                  Salvar Opções
+                </button>
+
+                <button class="btn btn-light btn-sm" type="reset" style="margin-left: 0.5em; border: 1px solid #DDD">
+                  Limpar
+                </button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+
+          <div class="d-flex align-items-center" style="margin-top: 2em;">
+            <div style="margin-right: 1em">
+              <span class="ball-question featured">
+                1
+              </span>
+            </div>
+            <div>
+              <p class="m-0">Garantir o atendimento especializado e em rede, incluindo o acolhimento institucional às crianças e aos adolescentes em situação de abuso e/ou exploração sexual e às suas famílias, faz parte do seguinte eixo do Plano Nacional de Enfrentamento da Violência Sexual contra Crianças e Adolescentes:</p>
+            </div>
+          </div>
+          <div class="text-muted" style="margin-left: 3em; margin-top: 0.5em">
+            <small>2020  |  VUNESP  |  Prefeitura de Cananéia  |  SP</small><br>
+            <small>Cordenador da Casa da Criança e do Adolecente</small>
+          </div>
+          <hr>
+          <div data-answer='A' class="d-flex align-items-center" style="margin-top: 0.5em;">
+            <div style="margin-right: 1em">
+              <span data-question='A' data- class="ball-question">
+                A
+              </span>
+            </div>
+            <div>
+              <p class="m-0">Participação e protagonismo.</p>
+            </div>
+          </div>
+          <div data-answer='B' class="d-flex align-items-center" style="margin-top: 0.5em;">
+            <div style="margin-right: 1em">
+              <span data-question='B' class="ball-question">
+                B
+              </span>
+            </div>
+            <div>
+              <p class="m-0">Prevenção.</p>
+            </div>
+          </div>
+          <div data-answer='C' class="d-flex align-items-center" style="margin-top: 0.5em;">
+            <div style="margin-right: 1em">
+              <span data-question='C' class="ball-question">
+                C
+              </span>
+            </div>
+            <div>
+              <p class="m-0">Defesa e responsabilização.</p>
+            </div>
+          </div>
+          <div data-answer='D' class="d-flex align-items-center" style="margin-top: 0.5em;">
+            <div style="margin-right: 1em">
+              <span data-question='D' class="ball-question">
+                D
+              </span>
+            </div>
+            <div>
+              <p class="m-0">Atenção.</p>
+            </div>
+          </div>
+          <div data-answer='E' class="d-flex align-items-center" style="margin-top: 0.5em;">
+            <div style="margin-right: 1em">
+              <span data-question='E' class="ball-question">
+                E
+              </span>
+            </div>
+            <div>
+              <p class="m-0">Comunicação e mobilização social.</p>
+            </div>
+          </div>
+
+          <div>
+            <br>
+            <button class="btn btn-primary" type="button">
+              Confirmar
+            </button>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="js/jquery-3.5.1.slim.min.js" ></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+$dark-blue: #1F2D3D;
+#main-menu{
+    margin-bottom: 1.5em;
+    color: #FFF;
+    background-color: $dark-blue;
+    .navbar-toggler{
+        border: none;
+        cursor: pointer;
+        i{
+            color: #FFF;
+        }
+    }
+    .breadcrumb{
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        margin-bottom: 0.5em;
+        .breadcrumb-item{
+            height: 1.2em;
+        }
+        a{
+            color: #CCC;
+            font-size: 0.75em;
+        }
+        .active{
+            font-size: 0.75em;
+        }
+    }
+    h1{
+        font-size: 1em;
+        margin-bottom: 0.25em;
+        font-weight: bold;
+    }
+    #search-bar{
+        color: #FFF;
+        font-size: 1.2em;
+    }
+}
+
+#logo{
+    display: inline-block;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+#logged-user{
+    color: #333;
+    padding-top: 1.5em;
+    i{
+        color: $dark-blue;
+        margin-left: 1em;
+        font-size: 1.5em;
+    }
+}
+#filters{
+    width: 100%;
+    max-width: 15em;
+    > div{
+        width: 45%;
+    }
+}
+#filtros-container{
+    margin-top: 1em;
+    max-width: 39em;
+}
+.ball-question{
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    width: 2em;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid $dark-blue;
+    color: $dark-blue;
+}
+.ball-question.featured{
+    background-color: $dark-blue;
+    color: #FFF;
+}
+.ball-question.featured-green{
+    background-color: #89ac6c;
+    border: 1px solid #89ac6c;
+    color: #FFF;
+}
+[data-answer]{
+    cursor: pointer;
+}
+.btn-primary{
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+}
+@media (min-width:993px){
+    #conteudoNavbarSuportado{
+        margin-left: 7em;
+    }
+}
+@media (max-width:992px){
+    #breadcrumb-menu{
+        width: 70%;
+    }
+    #search-bar{
+        margin-right: 1em;
+    }
+    #logged-user{
+        padding-top: 1.5em;
+        i{
+            margin-left: 0.5em;
+        }
+    }
+    #filters{
+        flex-direction: column;
+        max-width: 100%;
+        > div{
+            width: 100%;
+        }
+        > div + div{
+            margin-top: 1em;
+        }
+    }
+    #filtros-container{
+        max-width: 100%;
+    }
+}
